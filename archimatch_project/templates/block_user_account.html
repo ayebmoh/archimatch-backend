@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.5;
+      }
+      .fw-bold {
+        font-weight: bold;
+      }
+      .fst-italic {
+        font-style: italic;
+      }
+      .img-container {
+        text-align: center;
+        display: block;
+      }
+      #orange {
+        color: #ff6602;
+      }
+      .white {
+        color: #fff;
+      }
+
+      #center {
+        text-align: center;
+      }
+      .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      @media (min-width: 768px) {
+        .container {
+          width: 750px;
+        }
+      }
+      @media (min-width: 992px) {
+        .container {
+          width: 970px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .container {
+          width: 1170px;
+        }
+      }
+      .bg-light {
+        border: 1px solid;
+        border-color: #c0c0c0;
+        padding: 10px;
+      }
+      .button-container {
+        display: inline-block;
+      }
+      .bg-orange {
+        border: 1px solid;
+        border-radius: 30px;
+        background-color: #ff6602;
+        border-color: #ff6602;
+        padding: 10px;
+      }
+      .mt-4 {
+        margin-top: 40px;
+      }
+      .mt-2 {
+        margin-top: 20px;
+      }
+      .mt-5 {
+        margin-top: 50px;
+      }
+      .mb-0 {
+        margin-bottom: 0px;
+      }
+      .ml-4 {
+        margin-left: 40px;
+      }
+      .pt-4 {
+        padding-top: 40px;
+        text-align: center;
+      }
+
+      .footer__content {
+        padding: 25px;
+        text-align: center;
+      }
+
+      .footer__heading {
+        position: relative;
+        line-height: 2;
+      }
+
+      .footer__heading::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        height: 5px;
+        margin: 0;
+        border-radius: 50px;
+        width: 20%;
+        transform: translate(-50%, -50%);
+      }
+      .footer__content p {
+        font-weight: 100;
+        padding: 10px 0px;
+      }
+
+      #img {
+        height: 38px;
+        padding: 10px;
+      }
+      .center {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <span class="img-container">
+        <img src="cid:block.png" alt="block logo" />
+      </span>
+    </div>
+
+    <div class="container mt-4">
+      <div class="mb-5 pt-4">
+        <div>
+          <div>
+            <span id="orange" class="fw-bold"
+              >Nous sommes triste de vous voir partir.</span
+            ><br /><br />
+            <span
+              >Votre compte a été désactivé dû au nombre d’avertissements<br />
+              que vous avez reçu.</span
+            ><br /><br />
+            <span
+              >Nous sommes impatients de vous revoir parmi<br />nous
+              prochainement.</span
+            ><br />
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="footer mt-4">
+      <div class="container">
+        <span class="img-container">
+          <img src="cid:footer.png" alt="daxme footer logo" />
+        </span>
+
+        <div class="footer__content">
+          <table class="center">
+            <tr>
+              <th>
+                <img id="img" src="cid:facebook.png" alt="facebook logo" />
+              </th>
+              <th>
+                <img id="img" src="cid:instagram.png" alt="instagram logo" />
+              </th>
+              <th>
+                <img id="img" src="cid:linkedin.png" alt="linkedin logo" />
+              </th>
+              <th><img id="img" src="cid:twiter.png" alt="twiter logo" /></th>
+            </tr>
+          </table>
+          <div class="footer__heading">
+            2 rue jean lantier 75001, Paris, Ile de France, France
+          </div>
+          <hr
+            style="border: none; border-top: 1px solid #000; margin: 20px 0"
+          />
+          <p>© 2023 DAXme · Confidentialité · Conditions générales</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

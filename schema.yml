@@ -1,0 +1,512 @@
+openapi: 3.0.3
+info:
+  title: Archimatch
+  version: 0.0.0
+paths:
+  /swagger/:
+    get:
+      operationId: swagger_retrieve
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - corejson
+          - openapi
+          - swagger
+      tags:
+      - swagger
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /users_app/announcement/:
+    get:
+      operationId: users_app_announcement_list
+      tags:
+      - users_app
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Announcement'
+          description: ''
+    post:
+      operationId: users_app_announcement_create
+      tags:
+      - users_app
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Announcement'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Announcement'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Announcement'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Announcement'
+          description: ''
+  /users_app/announcement/{id}/:
+    get:
+      operationId: users_app_announcement_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this announcement.
+        required: true
+      tags:
+      - users_app
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Announcement'
+          description: ''
+    put:
+      operationId: users_app_announcement_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this announcement.
+        required: true
+      tags:
+      - users_app
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Announcement'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Announcement'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Announcement'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Announcement'
+          description: ''
+    patch:
+      operationId: users_app_announcement_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this announcement.
+        required: true
+      tags:
+      - users_app
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAnnouncement'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAnnouncement'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAnnouncement'
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Announcement'
+          description: ''
+    delete:
+      operationId: users_app_announcement_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this announcement.
+        required: true
+      tags:
+      - users_app
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /users_app/architectRequest/:
+    get:
+      operationId: users_app_architectRequest_list
+      tags:
+      - users_app
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ArchitectRequest'
+          description: ''
+    post:
+      operationId: users_app_architectRequest_create
+      tags:
+      - users_app
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArchitectRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ArchitectRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ArchitectRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArchitectRequest'
+          description: ''
+  /users_app/architectRequest/{id}/:
+    get:
+      operationId: users_app_architectRequest_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this architect request.
+        required: true
+      tags:
+      - users_app
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArchitectRequest'
+          description: ''
+    put:
+      operationId: users_app_architectRequest_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this architect request.
+        required: true
+      tags:
+      - users_app
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ArchitectRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ArchitectRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ArchitectRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArchitectRequest'
+          description: ''
+    patch:
+      operationId: users_app_architectRequest_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this architect request.
+        required: true
+      tags:
+      - users_app
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedArchitectRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedArchitectRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedArchitectRequest'
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArchitectRequest'
+          description: ''
+    delete:
+      operationId: users_app_architectRequest_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this architect request.
+        required: true
+      tags:
+      - users_app
+      security:
+      - jwtAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Announcement:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        adress:
+          type: string
+          maxLength: 255
+        town:
+          type: string
+          maxLength: 255
+        type:
+          type: string
+          maxLength: 255
+        approximity_surface:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,98}(?:\.\d{0,2})?$
+      required:
+      - adress
+      - approximity_surface
+      - id
+      - town
+      - type
+      - updated_at
+    ArchitectRequest:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        adress:
+          type: string
+          nullable: true
+          maxLength: 255
+        arch_identifier:
+          type: string
+          maxLength: 255
+        company_name:
+          type: string
+          maxLength: 255
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        first_name:
+          type: string
+          maxLength: 255
+        last_name:
+          type: string
+          maxLength: 255
+        meeting_date:
+          type: string
+          format: date-time
+        meeting_duration:
+          type: integer
+        meeting_time:
+          type: string
+          maxLength: 255
+        phone_number:
+          type: string
+          maxLength: 20
+        registration_number:
+          type: string
+          maxLength: 255
+        status:
+          $ref: '#/components/schemas/StatusEnum'
+        architect_type:
+          type: integer
+      required:
+      - arch_identifier
+      - architect_type
+      - company_name
+      - email
+      - first_name
+      - id
+      - last_name
+      - meeting_date
+      - meeting_time
+      - registration_number
+      - status
+      - updated_at
+    PatchedAnnouncement:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        adress:
+          type: string
+          maxLength: 255
+        town:
+          type: string
+          maxLength: 255
+        type:
+          type: string
+          maxLength: 255
+        approximity_surface:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,98}(?:\.\d{0,2})?$
+    PatchedArchitectRequest:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        adress:
+          type: string
+          nullable: true
+          maxLength: 255
+        arch_identifier:
+          type: string
+          maxLength: 255
+        company_name:
+          type: string
+          maxLength: 255
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        first_name:
+          type: string
+          maxLength: 255
+        last_name:
+          type: string
+          maxLength: 255
+        meeting_date:
+          type: string
+          format: date-time
+        meeting_duration:
+          type: integer
+        meeting_time:
+          type: string
+          maxLength: 255
+        phone_number:
+          type: string
+          maxLength: 20
+        registration_number:
+          type: string
+          maxLength: 255
+        status:
+          $ref: '#/components/schemas/StatusEnum'
+        architect_type:
+          type: integer
+    StatusEnum:
+      enum:
+      - Accepted
+      - Refused
+      - En attente Demo
+      - En attente Decision
+      type: string
+      description: |-
+        * `Accepted` - Accepted
+        * `Refused` - Refused
+        * `En attente Demo` - En attente Demo
+        * `En attente Decision` - En attente Decision
+  securitySchemes:
+    jwtAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

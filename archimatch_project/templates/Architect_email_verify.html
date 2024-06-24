@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verification Code</title>
+    <style>
+      * {
+        font-family: "Jost", sans-serif;
+        font-optical-sizing: auto;
+      }
+      .container {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+      .header {
+        display: inline-block;
+        width: 100% !important;
+      }
+      .inner-container {
+        display: inline;
+        width: 100%;
+      }
+
+      .align-right {
+        float: right;
+      }
+
+      .align-center {
+        text-align: center;
+      }
+
+      .align-left {
+        float: left;
+      }
+
+      .align-items-center {
+        vertical-align: middle;
+      }
+
+      .content {
+        width: 90% !important;
+        margin: auto !important;
+        gap: 30px !important;
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 20px;
+      }
+      .content > * {
+        margin-bottom: 30px;
+      }
+
+      .content > *:last-child {
+        margin-bottom: 0;
+      }
+
+      .btn {
+        text-decoration: none !important;
+        padding: 16px 32px !important;
+        color: white !important;
+        border-radius: 8px !important;
+        max-width: 230px !important;
+        text-align: center !important;
+        font-weight: bold !important;
+        display: inline-block !important;
+      }
+
+      .btn-login {
+        margin: auto !important;
+      }
+
+      .btn-architect {
+        background-color: #fc5c63 !important;
+      }
+
+      .header-img {
+        width: 80% !important;
+      }
+      .logo {
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+      }
+      .btn-container {
+        text-align: center;
+        display: inline-block;
+        justify-content: center;
+        width: 100% !important;
+      }
+      .verification-code {
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .verification-code span {
+        display: inline-block;
+        padding: 10px;
+        border: 1px solid #fc5c63;
+        border-radius: 10px;
+        width: 40px;
+        text-align: center;
+        margin: 0 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="inner-container align-items-center align-right">
+          <img
+            src="cid:architect-logo.png"
+            alt=""
+            class="align-items-center logo"
+          />
+        </div>
+      </div>
+      <img src="cid:Archi_Email_header.png" alt="" class="header-img" />
+      <div class="content">
+        <h1>Hi Angela</h1>
+
+        <p>Está intentando iniciar sesión desde el nuevo dispositivo.</p>
+        <div class="btn-container">
+          <div id="verification-code-container" class="verification-code">
+            {% for digit in OTP_code %}
+            <span>{{ digit }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="footer">
+          <p>Thanks,</p>
+          <h2>ArchiMatch Team</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
